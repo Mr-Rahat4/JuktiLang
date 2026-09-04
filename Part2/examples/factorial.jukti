@@ -1,0 +1,11 @@
+// JuktiLang Example — factorial.jukti (Part 2: যতক্ষণ loop)
+// Compute 6!
+ধরি সংখ্যা n      = 6;
+ধরি সংখ্যা result = 1;
+ধরি সংখ্যা i      = 1;
+
+যতক্ষণ (i <= n) {
+    result = result * i;
+    i = i + 1;
+}
+দেখাও(result);

@@ -1,0 +1,7 @@
+// JuktiLang Example — syntax_recovery.jukti (Part 2 feature)
+// Line 3 is missing '=' — the parser reports it and keeps going
+ধরি সংখ্যা a  10;
+
+// The compiler RECOVERS and still parses the rest:
+ধরি সংখ্যা b = 20;
+দেখাও(b);

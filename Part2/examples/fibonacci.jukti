@@ -1,0 +1,22 @@
+// JuktiLang Example — fibonacci.jukti (Part 2: যতক্ষণ + যদি/নাহলে)
+// First 10 Fibonacci numbers, then check parity of the last value
+ধরি সংখ্যা a     = 0;
+ধরি সংখ্যা b     = 1;
+ধরি সংখ্যা count = 0;
+ধরি সংখ্যা limit = 10;
+
+যতক্ষণ (count < limit) {
+    দেখাও(a);
+    ধরি সংখ্যা temp = a + b;
+    a = b;
+    b = temp;
+    count = count + 1;
+}
+
+// rem must be দশমিক since division always produces float in JuktiLang
+ধরি দশমিক rem = a - (a / 2) * 2;
+যদি (rem == 0) {
+    দেখাও(1);
+} নাহলে {
+    দেখাও(0);
+}

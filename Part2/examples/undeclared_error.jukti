@@ -1,0 +1,3 @@
+// JuktiLang Example — undeclared_error.jukti (expected to FAIL semantic analysis)
+ধরি সংখ্যা x = 5;
+দেখাও(y);   // y was never declared

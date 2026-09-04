@@ -1,0 +1,5 @@
+// JuktiLang Example 1 — hello.jukti
+// Basic declaration, arithmetic, and print
+ধরি সংখ্যা x = 5;
+ধরি সংখ্যা y = 10;
+দেখাও(x + y);

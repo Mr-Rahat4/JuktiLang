@@ -1,0 +1,9 @@
+// JuktiLang Example — swap.jukti
+// Swap two variables using a temporary
+ধরি সংখ্যা a = 3;
+ধরি সংখ্যা b = 9;
+ধরি সংখ্যা temp = a;
+a = b;
+b = temp;
+দেখাও(a);
+দেখাও(b);

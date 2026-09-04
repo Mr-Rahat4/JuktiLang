@@ -1,0 +1,4 @@
+// JuktiLang Example — type_error.jukti (expected to FAIL semantic analysis)
+ধরি সংখ্যা x = 5;
+ধরি দশমিক y = 2.5;
+x = y;   // cannot narrow দশমিক -> সংখ্যা

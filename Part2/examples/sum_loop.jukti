@@ -1,0 +1,11 @@
+// JuktiLang Example — sum_loop.jukti (Part 2: যতক্ষণ loop)
+// Sum of 1..10
+ধরি সংখ্যা n   = 10;
+ধরি সংখ্যা sum = 0;
+ধরি সংখ্যা i   = 1;
+
+যতক্ষণ (i <= n) {
+    sum = sum + i;
+    i = i + 1;
+}
+দেখাও(sum);

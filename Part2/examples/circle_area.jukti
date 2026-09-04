@@ -1,0 +1,6 @@
+// JuktiLang Example — circle_area.jukti
+// Area of a circle using a দশমিক (float) radius
+ধরি দশমিক pi     = 3.14159;
+ধরি দশমিক radius = 4.5;
+ধরি দশমিক area   = pi * radius * radius;
+দেখাও(area);

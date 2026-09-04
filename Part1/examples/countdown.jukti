@@ -1,0 +1,6 @@
+// JuktiLang Example — countdown.jukti (Part 2: যতক্ষণ loop)
+ধরি সংখ্যা timer = 5;
+যতক্ষণ (timer > 0) {
+    দেখাও(timer);
+    timer = timer - 1;
+}

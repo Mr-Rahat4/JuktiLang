@@ -1,0 +1,10 @@
+// JuktiLang Example — math_test.jukti
+// Exercises + - * / and operator precedence together
+ধরি সংখ্যা a = 12;
+ধরি সংখ্যা b = 5;
+দেখাও(a + b);
+দেখাও(a - b);
+দেখাও(a * b);
+ধরি দশমিক c = a / b;
+দেখাও(c);
+দেখাও((a + b) * 2);

@@ -1,0 +1,56 @@
+# JuktiLang BNF Grammar (Finalized — Phase 0)
+# Owner: Rahat (Grammar & Parser Lead)
+#
+# Keywords used:
+#   ধরি      -> "declare" (var declaration)
+#   যদি      -> "if"
+#   নাহলে    -> "else"
+#   যতক্ষণ   -> "while"
+#   দেখাও    -> "print"
+#   সংখ্যা   -> int type
+#   দশমিক    -> float type
+
+<program>        ::= <statement>*
+
+<statement>       ::= <declaration>
+                     | <assignment>
+                     | <if-statement>
+                     | <while-statement>
+                     | <print-statement>
+
+<declaration>     ::= "ধরি" <type> <identifier> "=" <expression> ";"
+                     | "ধরি" <type> <identifier> ";"
+
+<type>            ::= "সংখ্যা" | "দশমিক"
+
+<assignment>      ::= <identifier> "=" <expression> ";"
+
+<if-statement>    ::= "যদি" "(" <condition> ")" "{" <statement>* "}"
+                       [ "নাহলে" "{" <statement>* "}" ]
+
+<while-statement> ::= "যতক্ষণ" "(" <condition> ")" "{" <statement>* "}"
+
+<print-statement> ::= "দেখাও" "(" <expression> ")" ";"
+
+<condition>       ::= <expression> <rel-op> <expression>
+
+<rel-op>          ::= "==" | "!=" | "<" | ">" | "<=" | ">="
+
+# Arithmetic expression grammar, precedence-climbing style
+# (lowest to highest precedence: + - , then * / , then unary, then atom)
+<expression>      ::= <term> ( ("+" | "-") <term> )*
+<term>            ::= <factor> ( ("*" | "/") <factor> )*
+<factor>          ::= <number> | <identifier> | "(" <expression> ")" | ("-" <factor>)
+
+<number>          ::= <int-literal> | <float-literal>
+<int-literal>     ::= digit+
+<float-literal>   ::= digit+ "." digit+
+
+<identifier>      ::= letter (letter | digit | "_")*
+
+# ── Semantic rules (enforced by Reshmi's analyzer, not by this grammar) ──
+#  1. A variable must be declared before it is used or assigned.
+#  2. A variable cannot be declared twice in the same (single global) scope.
+#  3. দশমিক (float) values cannot be narrowed into সংখ্যা (int) variables.
+#  4. "/" always produces দশমিক, even if both operands are সংখ্যা.
+#  5. Relational operators (==, !=, <, >, <=, >=) always produce সংখ্যা (0/1).

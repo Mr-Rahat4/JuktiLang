@@ -1,0 +1,12 @@
+// JuktiLang Example — nested_if.jukti
+// Nested যদি/নাহলে to classify a number
+ধরি সংখ্যা n = 42;
+যদি (n > 0) {
+    যদি (n > 100) {
+        দেখাও(2);
+    } নাহলে {
+        দেখাও(1);
+    }
+} নাহলে {
+    দেখাও(0);
+}
